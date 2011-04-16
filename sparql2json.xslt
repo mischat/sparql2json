@@ -32,12 +32,12 @@ modified by Mischa Tuffield to output json on 20110416T12:00:00Z
   <xsl:template name="vb-result">
 	<xsl:for-each select="res:results/res:result">
 	<xsl:variable name="current" select="."/>
-	{
+    {
           <xsl:for-each select="//res:head/res:variable"> 
 		<xsl:variable name="name" select="@name"/>
-		"<xsl:value-of select="$name"/>" : "<xsl:apply-templates select="$current/res:binding[@name=$name]"/>" ,
+        "<xsl:value-of select="$name"/>" : "<xsl:apply-templates select="$current/res:binding[@name=$name]"/>" <xsl:choose> <xsl:when test="not(position() = last())"> , </xsl:when> </xsl:choose>
           </xsl:for-each> 
-	} ,
+    } <xsl:choose> <xsl:when test="not(position() = last())"> , </xsl:when> </xsl:choose> 
 	</xsl:for-each>
   </xsl:template>
 
