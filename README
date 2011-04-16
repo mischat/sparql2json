@@ -1,13 +1,12 @@
 This is a hacked version of the sparql2html.xslt file taken from the DAWG tests put together by the W3C. I hope I am not breaking any copyrights. I have kept their copyright as a whole in my hacked version. 
 
-The scripts are linked about and talked about here: 
+The scripts I mention are linked from the below document:
 
 http://www.w3.org/2001/sw/DataAccess/rf1/
 
-
 Example: 
 
-This example query should return something when pointed to a sparql endpoint with foaf data in it at the following URL: 
+This example query should return something when pointed to a sparql endpoint with foaf data in it which speaks sparql protocol at the following URI: 
 http://localhost:8888/sparql/
 
 xsltproc sparql2json.xslt 'http://localhost:8888/sparql/?query=SELECT%20%3Fname%20%20%3Fs%20WHERE%20%7B%20%3Fs%20%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23type%3E%20%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2FPerson%3E%20.%3Fs%20%3Chttp%3A%2F%2Fxmlns.com%2Ffoaf%2F0.1%2Fname%3E%20%3Fname%7D'
